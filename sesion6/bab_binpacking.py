@@ -14,9 +14,27 @@ def binpacking_solve(objects: List[int], capacity: int):
             self._opt = self._calc_opt_bound()
             self._pes = self._calc_pes_bound()
 
-        # TODO: IMPLEMENTAR - Relaja el problema. Trata los objetos que quedan como si fueran un líquido
+        # IMPLEMENTAR - Relaja el problema. Trata los objetos que quedan como si fueran un líquido
         def _calc_opt_bound(self) -> Union[int, float]:
-            return len(self.container_weights)  # AHORA ES DEMASIADO OPTIMISTA
+            if self.n == 0:
+                return (sum(objects) + capacity -1 ) // capacity
+            if self.n == len(objects):
+                return len(self.container_weights)
+            max_hueco = capacity - min(self.container_weights)
+
+            peso_objetos = 0
+            for elem in objects[self.n:]:
+                if elem <= max_hueco:
+                    peso_objetos += elem
+            min_objeto = min(objects[self.n:])
+            hueco_libre = 0
+            for weight in self.container_weights:
+                if capacity - weight >= min_objeto:
+                    hueco_libre += capacity - weight
+            usado = min(peso_objetos, hueco_libre)
+            adicionales = max(0, (sum(objects[self.n:]) - usado + capacity - 1) // capacity)
+
+            return len(self.container_weights) + adicionales # AHORA ES DEMASIADO OPTIMISTA
 
         # TODO: IMPLEMENTAR - Algoritmo voraz. Completa la solución parcial actual con "En el primero en el que quepa"
         def _calc_pes_bound(self) -> Union[int, float]:
@@ -70,9 +88,9 @@ def create_exact_binpacking_problem(num_containers: int, objects_per_container: 
 # PROGRAMA PRINCIPAL -------------------------------------------------------
 if __name__ == "__main__":
     # Descomenta la instancia del problema que quieras resolver:
-    C, objs = 10, [6, 6, 3, 3, 2, 2, 2, 2, 2, 2]  # SOLUCIÓN ÓPTIMA: 3 contenedores
-    # C, objs = create_exact_binpacking_problem(6, 3)  # SOLUCIÓN ÓPTIMA: 6 contenedores
-    # C, objs = create_exact_binpacking_problem(12, 3) # SOLUCIÓN ÓPTIMA: 12 contenedores
+    #C, objs = 10, [6, 6, 3, 3, 2, 2, 2, 2, 2, 2]  # SOLUCIÓN ÓPTIMA: 3 contenedores
+    #C, objs = create_exact_binpacking_problem(6, 3)  # SOLUCIÓN ÓPTIMA: 6 contenedores
+    C, objs = create_exact_binpacking_problem(12, 3) # SOLUCIÓN ÓPTIMA: 12 contenedores
 
     print("PROBLEM TO SOLVE:")
     print("\tContainer capacity:", C)

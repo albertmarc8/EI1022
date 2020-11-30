@@ -18,8 +18,9 @@ Dos modos de funcionamiento según parámetro del constructor (vertexmode):
    (0,0)---(8,0)
 """
 
-from easycanvas import EasyCanvas
 from algoritmia.datastructures.digraphs import UndirectedGraph
+from easycanvas import EasyCanvas
+
 
 class Graph2dViewer(EasyCanvas):
     X_Y = 0

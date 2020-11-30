@@ -1,6 +1,6 @@
-from algoritmia.datastructures.digraphs import UndirectedGraph
 from typing import *
 
+from algoritmia.datastructures.digraphs import UndirectedGraph
 from algoritmia.datastructures.queues import Fifo
 
 Vertex = Tuple[int, int]

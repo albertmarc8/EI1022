@@ -1,6 +1,7 @@
-from utils.bt_scheme import PartialSolutionWithOptimization, BacktrackingOptSolver, State, Solution
-from typing import *
 from random import random, seed
+from typing import *
+
+from utils.bt_scheme import PartialSolutionWithOptimization, BacktrackingOptSolver, State, Solution
 
 
 def knapsack_solve(weights, values, capacity):

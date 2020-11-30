@@ -14,6 +14,7 @@ Representamos un laberinto mediante un grafo no dirigido con las siguientes cara
 
 '''
 from algoritmia.datastructures.digraphs import UndirectedGraph
+
 from sesion1y2.labyrinthviewer import LabyrinthViewer
 
 if __name__ == '__main__':

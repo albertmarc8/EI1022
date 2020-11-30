@@ -9,6 +9,7 @@ from functools import total_ordering
 from typing import *
 
 from algoritmia.datastructures.priorityqueues import MaxHeap, MinHeap
+
 from utils.bt_scheme import PartialSolution  # Importamos PartialSolution del backtracking
 
 Solution = TypeVar('Solution')

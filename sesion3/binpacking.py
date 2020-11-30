@@ -1,5 +1,5 @@
 from typing import *
-from random import random, seed
+
 
 def mientras_quepa(objetos: List[int], capacidad: int) -> List[int]:
     contenedores = []

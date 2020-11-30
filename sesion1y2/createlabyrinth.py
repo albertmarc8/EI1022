@@ -1,6 +1,7 @@
-from algoritmia.datastructures.mergefindsets import MergeFindSet
-from algoritmia.datastructures.digraphs import UndirectedGraph
 import random
+
+from algoritmia.datastructures.digraphs import UndirectedGraph
+from algoritmia.datastructures.mergefindsets import MergeFindSet
 
 
 def create_labyrinth(rows, cols, n=0):

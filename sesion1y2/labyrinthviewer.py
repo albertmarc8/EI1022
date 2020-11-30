@@ -13,9 +13,10 @@ Dibuja un laberinto a partir de un grafo no dirigido con las siguientes caracter
   NO hay muro.
 """
 
-from easycanvas import EasyCanvas
-from algoritmia.datastructures.digraphs import UndirectedGraph
 from typing import *
+
+from algoritmia.datastructures.digraphs import UndirectedGraph
+from easycanvas import EasyCanvas
 
 Vertex = Tuple[int, int]
 Edge = Tuple[Vertex, Vertex]

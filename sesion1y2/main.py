@@ -1,6 +1,5 @@
-from sesion1y2.labyrinthviewer import LabyrinthViewer
 from sesion1y2.createlabyrinth import create_labyrinth
-
+from sesion1y2.labyrinthviewer import LabyrinthViewer
 
 if __name__ == "__main__":
     print("Ejecutando aplicación")

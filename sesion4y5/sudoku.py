@@ -1,5 +1,6 @@
-from utils.bt_scheme import PartialSolution, BacktrackingSolver
 from typing import *
+
+from utils.bt_scheme import PartialSolution, BacktrackingSolver
 
 Position = Tuple[int, int]
 Sudoku = List[List[int]]
